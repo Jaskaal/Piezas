@@ -1,4 +1,7 @@
 # Piezas
+[![Build](https://travis-ci.org/Jaskaal/Piezas.svg?branch=master)](https://travis-ci.org/Jaskaal/Piezas.svg?branch=master)
+
+[![Coverage Status](https://coveralls.io/repos/github/Jaskaal/Piezas/badge.svg?branch=master)](https://coveralls.io/github/Jaskaal/Piezas?branch=master)
 
 ## Associated Enumerated Types
 `Piece` has four possible values: `X`,`O`,`Invalid`, and `Blank`
