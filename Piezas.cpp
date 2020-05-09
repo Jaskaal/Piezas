@@ -20,16 +20,26 @@
  * Constructor sets an empty board (default 3 rows, 4 columns) and 
  * specifies it is X's turn first
 **/
-Piezas::Piezas()
-{
+Piezas::Piezas() {
+	// Resize base of gameboard to have valid row amount
+	board.resize(3);
+
+	// For every row, resize row to proper size
+	for(int i = 0; i < board.size(); board[i].resize(4), i++) {
+		
+		// For every row[i] element, reset
+		for(int j = 0; j < board[i].size(); j++) {
+			board[i][j] = Blank;
+		}
+	}
+	turn = X;
 }
 
 /**
  * Resets each board location to the Blank Piece value, with a board of the
  * same size as previously specified
 **/
-void Piezas::reset()
-{
+void Piezas::reset() {
 }
 
 /**
@@ -40,8 +50,7 @@ void Piezas::reset()
  * Out of bounds coordinates return the Piece Invalid value
  * Trying to drop a piece where it cannot be placed loses the player's turn
 **/ 
-Piece Piezas::dropPiece(int column)
-{
+Piece Piezas::dropPiece(int column) {
     return Blank;
 }
 
@@ -49,8 +58,7 @@ Piece Piezas::dropPiece(int column)
  * Returns what piece is at the provided coordinates, or Blank if there
  * are no pieces there, or Invalid if the coordinates are out of bounds
 **/
-Piece Piezas::pieceAt(int row, int column)
-{
+Piece Piezas::pieceAt(int row, int column) {
     return Blank;
 }
 
@@ -63,7 +71,6 @@ Piece Piezas::pieceAt(int row, int column)
  * or horizontally. If both X's and O's have the same max number of pieces in a
  * line, it is a tie.
 **/
-Piece Piezas::gameState()
-{
+Piece Piezas::gameState() {
     return Blank;
 }

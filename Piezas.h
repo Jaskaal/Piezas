@@ -5,8 +5,7 @@
 const int BOARD_ROWS = 3;
 const int BOARD_COLS = 4;
 
-enum Piece
-{
+enum Piece {
   	X = 'X',
   	O = 'O',
   	Invalid = '?',
@@ -27,8 +26,7 @@ enum Piece
  * So that a piece dropped in column 2 should take [0,2] and the next one
  * dropped in column 2 should take [1,2].
 **/
-class Piezas
-{
+class Piezas {
   private:
   	std::vector < std::vector<Piece> > board;
   	Piece turn;
