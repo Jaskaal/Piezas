@@ -99,7 +99,7 @@ Piece Piezas::pieceAt(int row, int column) {
 	else if(column >= (int)board[0].size() || column < 0) {
 		return Invalid;
 	}
-	
+
 	return board[row][column];
 }
 
@@ -148,11 +148,6 @@ Piece Piezas::gameState() {
 		// For every [j][i] element (non-static iteration limit)
 		for(int j = 0; j < (int)board.size(); j++) {
 			
-			// Blank tile (Fatal on non-valid position?)
-			if(board[j][i] == Blank || (board[j][i] != X && board[j][i] != O)) {
-				return Invalid;
-			} 
-
 			// X
 			else if(board[j][i] == X) {
 				contO = 0, contX += 1;
