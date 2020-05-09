@@ -173,5 +173,8 @@ Piece Piezas::gameState() {
 	// Is X == O? ->
 	// Is X > O ? ->
 	// Return conditionally
-	return (XMax == OMax ? Blank:(XMax > OMax ? X:O));
+	//return (XMax == OMax ? Blank:(XMax > OMax ? X:O));
+	if(XMax == OMax) {return Blank;}
+	else if(OMax > XMax) {return X;}
+	else {return O;}
 }

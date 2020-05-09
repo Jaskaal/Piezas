@@ -88,10 +88,10 @@ TEST(PiezasTest, gsBaseCheck) {
 	Piezas b;
 
 	// Drop pieces
-	for(int i = 0; i < 2; b.dropPiece(0), i++);
-	for(int i = 0; i < 2; b.dropPiece(1), i++);
-	for(int i = 0; i < 2; b.dropPiece(2), i++);
-	for(int i = 0; i < 2; b.dropPiece(3), i++);
-	for(int i = 0; i < 2; b.dropPiece(4), i++);
+	for(int i = 0; i < 2; i++) {b.dropPiece(0);}
+	for(int i = 0; i < 2; i++) {b.dropPiece(1);}
+	for(int i = 0; i < 2; i++) {b.dropPiece(2);}
+	for(int i = 0; i < 2; i++) {b.dropPiece(3);}
+	for(int i = 0; i < 2; i++) {b.dropPiece(4);}
 	ASSERT_EQ(b.gameState(), Blank);
 }
