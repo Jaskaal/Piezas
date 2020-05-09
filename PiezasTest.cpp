@@ -182,8 +182,8 @@ TEST(PiezasTest, gsBad) {
 	b.dropPiece(3);
 	b.dropPiece(2);
 	b.dropPiece(3);
-	
-	p = b.gameState();
+
+	Piece p = b.gameState();
 	ASSERT_EQ(p, Invalid);
 }
 
