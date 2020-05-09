@@ -91,7 +91,18 @@ Piece Piezas::dropPiece(int column) {
 * are no pieces there, or Invalid if the coordinates are out of bounds
 **/
 Piece Piezas::pieceAt(int row, int column) {
-	// ADD CHECKS HERE?
+	if(row >= (int)board.size() || row < 0) {
+		return Invalid;
+	}
+	
+	else if(column >= (int)board[0].size() || column < 0) {
+		return Invalid;
+	}
+
+	if(board[row][column] != X && board[row][column] != O && board[row][column] != Blank) {
+		return Invalid;
+	}
+	
 	return board[row][column];
 }
 
