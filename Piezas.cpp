@@ -83,7 +83,7 @@ Piece Piezas::dropPiece(int column) {
 			return tmpTurn;
 		}
 	}
-	return tmpTurn;//Hopefully this will fix it
+	return Blank;//Hopefully this will fix it
 }
 
 /**
