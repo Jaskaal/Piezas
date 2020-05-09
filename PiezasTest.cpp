@@ -18,7 +18,7 @@ TEST(PiezasTest, sanityCheck) {
 }
 
 // Constructor
-TEST(PiezasTest, blankCheck) {
+TEST(PiezasTest, constCheck) {
 	Piezas b;
 	for(int i = 0; i < 3; i++) {
 		for(int j = 0; j < 4; ASSERT_EQ(board.pieceAt(i,j), Blank), j++);
@@ -26,7 +26,7 @@ TEST(PiezasTest, blankCheck) {
 }
 
 // Basic reset()
-TEST(PiezasTest, blankCheck) {
+TEST(PiezasTest, rstBaseCheck) {
 	Piezas b;
 
 	// Drop pieces
