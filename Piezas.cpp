@@ -21,10 +21,10 @@
 * specifies it is X's turn first
 **/
 Piezas::Piezas() {
-	// Resize base of gameboard to have valid row amount
+	// Resize (Static) base of gameboard to have valid row amount
 	board.resize(3);
 
-	// For every row (non-static iteration limit), resize row to proper size
+	// For every row (non-static iteration limit), resize (Static) row to proper size
 	for(int i = 0; i < board.size(); board[i].resize(4), i++) {
 		
 		// For every row[i] element (non-static iteration limit), reset
@@ -39,7 +39,6 @@ Piezas::Piezas() {
 * Resets each board location to the Blank Piece value, with a board of the
 * same size as previously specified
 **/
-
 void Piezas::reset() {
 	// For every row (non-static iteration limit), resize row to proper size
 	for(int i = 0; i < board.size(); board[i].resize(4), i++) {
@@ -65,7 +64,7 @@ Piece Piezas::dropPiece(int column) {
 
 	// Toggle turn
 	if(turn == X) {
-		turn O;
+		turn = O;
 	} else {
 		turn = X;
 	}
