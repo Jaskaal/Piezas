@@ -27,7 +27,7 @@ Piezas::Piezas() {
 	// For every row (non-static iteration limit), resize (Static) row to proper size
 	for(int i = 0; i < (int)board.size(); i++) {
 		board[i].resize(4);
-		
+
 		// For every [i][j] element (non-static iteration limit), reset
 		for(int j = 0; j < (int)board[i].size(); j++) {
 			board[i][j] = Blank;
@@ -138,7 +138,7 @@ Piece Piezas::gameState() {
 			} 
 
 			// O
-			else if(board[i][j] == X) {
+			else if(board[i][j] == O) {
 				contX = 0;
 				OMax = std::max(OMax, ++contO);
 			}
@@ -163,7 +163,7 @@ Piece Piezas::gameState() {
 			} 
 
 			// O
-			else if(board[j][i] == X) {
+			else if(board[j][i] == O) {
 				contX = 0;
 				OMax = std::max(OMax, ++contO);
 			}
