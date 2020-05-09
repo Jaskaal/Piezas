@@ -21,7 +21,7 @@ TEST(PiezasTest, sanityCheck) {
 TEST(PiezasTest, constCheck) {
 	Piezas b;
 	for(int i = 0; i < 3; i++) {
-		for(int j = 0; j < 4; ASSERT_EQ(board.pieceAt(i,j), Blank), j++);
+		for(int j = 0; j < 4; ASSERT_EQ(b.pieceAt(i,j), Blank), j++);
 	}
 }
 
@@ -30,16 +30,16 @@ TEST(PiezasTest, rstBaseCheck) {
 	Piezas b;
 
 	// Drop pieces
-	for(int i = 0; i < 2; board.dropPiece(0), i++);
-	for(int i = 0; i < 2; board.dropPiece(1), i++);
-	for(int i = 0; i < 2; board.dropPiece(2), i++);
-	for(int i = 0; i < 2; board.dropPiece(3), i++);
-	for(int i = 0; i < 2; board.dropPiece(4), i++);
+	for(int i = 0; i < 2; b.dropPiece(0), i++);
+	for(int i = 0; i < 2; b.dropPiece(1), i++);
+	for(int i = 0; i < 2; b.dropPiece(2), i++);
+	for(int i = 0; i < 2; b.dropPiece(3), i++);
+	for(int i = 0; i < 2; b.dropPiece(4), i++);
 
 	// Reset and check
 	b.reset();
 	for(int i = 0; i < 3; i++) {
-		for(int j = 0; j < 4; ASSERT_EQ(board.pieceAt(i,j), Blank), j++);
+		for(int j = 0; j < 4; ASSERT_EQ(b.pieceAt(i,j), Blank), j++);
 	}
 }
 
