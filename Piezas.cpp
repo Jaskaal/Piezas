@@ -27,7 +27,7 @@ Piezas::Piezas() {
 	// For every row (non-static iteration limit), resize (Static) row to proper size
 	for(int i = 0; i < board.size(); board[i].resize(4), i++) {
 		
-		// For every row[i] element (non-static iteration limit), reset
+		// For every [i][j] element (non-static iteration limit), reset
 		for(int j = 0; j < board[i].size(); j++) {
 			board[i][j] = Blank;
 		}
@@ -43,7 +43,7 @@ void Piezas::reset() {
 	// For every row (non-static iteration limit), resize row to proper size
 	for(int i = 0; i < board.size(); board[i].resize(4), i++) {
 		
-		// For every row[i] element (non-static iteration limit), reset
+		// For every [i][j] element (non-static iteration limit), reset
 		for(int j = 0; j < board[i].size(); j++) {
 			board[i][j] = Blank;
 		}
@@ -77,11 +77,13 @@ Piece Piezas::dropPiece(int column) {
 		
 		// Check the position [i][argument]
 		if(board[i][column] == Blank) {
+
+			// Assign the board position and return value
 			board[i][column] = tmpTurn;
 			return tmpTurn;
 		}
 	}
-	return Blank;
+	return tmpTurn;//Hopefully this will fix it
 }
 
 /**
@@ -103,9 +105,43 @@ Piece Piezas::pieceAt(int row, int column) {
 * line, it is a tie.
 **/
 Piece Piezas::gameState() {
-	// Keep track of maximums
-	// Keep track of values
+	// Keep track of maximums and continuous values
+	int OMax = 0, XMax = 0;
+	int contO, contX = 0;
 
-	// Check for winning conditions in X & Y
+	// For every row (non-static iteration limit) in board
+	for(int i = 0; i < board.size(); i++) {
+		
+		// For every [i][j] element (non-static iteration limit)
+		for(int j = 0; j < board[i].size(); j++) {
+			// Blank tile (Fatal on non-valid position?)
+			if(board[i][j] == Blank || (board[i][j] != X && board[i][j] != O)) {
+				return Invalid;
+			} 
+
+			// X
+			else if(board[i][j] == X) {
+				contO = 0;
+				XMax = std::max(XMax, ++contX);
+			} 
+
+			// O
+			else if(board[i][j] == X) {
+				contX = 0;
+				OMax = std::max(OMax, ++contO);
+			}
+		}
+	}
+
+	// For every column (non-static iteration limit) in board
+	for(int i = 0; i < board.size()[0]; i++) {
+
+		// For every [j][i] element (non-static iteration limit)
+		for(int j = 0; j < board.size(); j++) {
+			//
+		}
+	}
+
+	// Check X
 	return Blank;
 }
