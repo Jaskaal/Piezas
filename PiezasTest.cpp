@@ -131,7 +131,7 @@ TEST(PiezasTest, gsXBaseCheck) {
 }
 
 // Y wins gameState()
-TEST(PiezasTest, gsYBaseCheck) {
+TEST(PiezasTest, gsOBaseCheck) {
 	Piezas b;
 	Piece p;
 
@@ -154,7 +154,7 @@ TEST(PiezasTest, gsYBaseCheck) {
 	b.dropPiece(0);
 	
 	p = b.gameState();
-	ASSERT_EQ(p, Y);
+	ASSERT_EQ(p, O);
 }
 
 // Invalid gameState()
