@@ -99,9 +99,9 @@ Piece Piezas::pieceAt(int row, int column) {
 		return Invalid;
 	}
 
-	if(board[row][column] != X && board[row][column] != O && board[row][column] != Blank) {
+	/*if(board[row][column] != X && board[row][column] != O && board[row][column] != Blank) {
 		return Invalid;
-	}
+	}*/
 
 	return board[row][column];
 }
