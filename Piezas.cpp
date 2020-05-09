@@ -32,6 +32,7 @@ Piezas::Piezas() {
 			board[i][j] = Blank;
 		}
 	}
+	board.reset();
 	turn = X;
 }
 

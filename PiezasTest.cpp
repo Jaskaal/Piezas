@@ -50,7 +50,8 @@ TEST(PiezasTest, rstBaseCheck) {
 // Basic dropPiece()
 TEST(PiezasTest, dpBaseXCheck) {
 	Piezas b;
-	Piece position = b.dropPiece(0);
+	Piece position;
+	position = b.dropPiece(0);
 	ASSERT_EQ(position, X);
 }
 
@@ -58,6 +59,7 @@ TEST(PiezasTest, dpBaseXCheck) {
 TEST(PiezasTest, dpBaseOCheck) {// We dropPiece() twice to get it to go to O's turn
 	Piezas b;
 	b.dropPiece(0);
-	Piece position = b.dropPiece(0);
+	Piece position;
+	position = b.dropPiece(0);
 	ASSERT_EQ(position, O);
 }
