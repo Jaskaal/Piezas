@@ -21,18 +21,18 @@
 * specifies it is X's turn first
 **/
 Piezas::Piezas() {
-// Resize base of gameboard to have valid row amount
-board.resize(3);
+	// Resize base of gameboard to have valid row amount
+	board.resize(3);
 
-// For every row (non-static iteration limit), resize row to proper size
-for(int i = 0; i < board.size(); board[i].resize(4), i++) {
-	
-	// For every row[i] element (non-static iteration limit), reset
-	for(int j = 0; j < board[i].size(); j++) {
-		board[i][j] = Blank;
+	// For every row (non-static iteration limit), resize row to proper size
+	for(int i = 0; i < board.size(); board[i].resize(4), i++) {
+		
+		// For every row[i] element (non-static iteration limit), reset
+		for(int j = 0; j < board[i].size(); j++) {
+			board[i][j] = Blank;
+		}
 	}
-}
-turn = X;
+	turn = X;
 }
 
 /**
@@ -41,14 +41,14 @@ turn = X;
 **/
 
 void Piezas::reset() {
-// For every row (non-static iteration limit), resize row to proper size
-for(int i = 0; i < board.size(); board[i].resize(4), i++) {
-	
-	// For every row[i] element (non-static iteration limit), reset
-	for(int j = 0; j < board[i].size(); j++) {
-		board[i][j] = Blank;
+	// For every row (non-static iteration limit), resize row to proper size
+	for(int i = 0; i < board.size(); board[i].resize(4), i++) {
+		
+		// For every row[i] element (non-static iteration limit), reset
+		for(int j = 0; j < board[i].size(); j++) {
+			board[i][j] = Blank;
+		}
 	}
-}
 }
 
 /**
@@ -60,6 +60,7 @@ for(int i = 0; i < board.size(); board[i].resize(4), i++) {
 * Trying to drop a piece where it cannot be placed loses the player's turn
 **/ 
 Piece Piezas::dropPiece(int column) {
+	// Keep track of turn
 	Piece tmpTurn = turn;
 
 	// Toggle turn
@@ -89,7 +90,8 @@ Piece Piezas::dropPiece(int column) {
 * are no pieces there, or Invalid if the coordinates are out of bounds
 **/
 Piece Piezas::pieceAt(int row, int column) {
-	return Blank;
+	// ADD CHECKS HERE?
+	return board[row][column];
 }
 
 /**
@@ -102,5 +104,9 @@ Piece Piezas::pieceAt(int row, int column) {
 * line, it is a tie.
 **/
 Piece Piezas::gameState() {
+	// Keep track of maximums
+	// Keep track of values
+
+	// Check for winning conditions in X & Y
 	return Blank;
 }
