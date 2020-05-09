@@ -56,10 +56,29 @@ TEST(PiezasTest, dpBaseXCheck) {
 }
 
 // Basic dropPiece()
-TEST(PiezasTest, dpBaseOCheck) {// We dropPiece() twice to get it to go to O's turn
+TEST(PiezasTest, dpBaseOCheck) {
 	Piezas b;
 	b.dropPiece(0);
 	Piece position;
 	position = b.dropPiece(0);
 	ASSERT_EQ(position, O);
+}
+
+// Invalid dropPiece()
+TEST(PiezasTest, dpBaseInvalid) {
+	Piezas b;
+	Piece p;
+	b.dropPiece(0);
+	b.dropPiece(0);
+	b.dropPiece(0);
+	p = b.dropPiece(0);
+	ASSERT_EQ(p, Blank);
+}
+
+// Invalid dropPiece() OOB
+TEST(PiezasTest, dpOOB) {
+	Piezas b;
+	Piece p;
+	p = b.dropPiece(92);
+	ASSERT_EQ(p, Invalid);
 }
