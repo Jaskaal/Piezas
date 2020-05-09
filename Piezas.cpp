@@ -25,14 +25,14 @@ Piezas::Piezas() {
 	board.resize(3);
 
 	// For every row (non-static iteration limit), resize (Static) row to proper size
-	for(int i = 0; i < (int)board.size(); board[i].resize(4), i++) {
+	for(int i = 0; i < (int)board.size(); i++) {
+		board[i].resize(4);
 		
 		// For every [i][j] element (non-static iteration limit), reset
 		for(int j = 0; j < (int)board[i].size(); j++) {
 			board[i][j] = Blank;
 		}
 	}
-	board.reset();
 	turn = X;
 }
 
