@@ -159,6 +159,7 @@ TEST(PiezasTest, gsInvBaseCheck) {
 	Piezas b;
 	Piece p;
 	b.dropPiece(0);
+	b.reset();
 	p = b.gameState();
 	ASSERT_EQ(p, Invalid);
 }
