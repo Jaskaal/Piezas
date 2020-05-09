@@ -82,3 +82,16 @@ TEST(PiezasTest, dpOOB) {
 	p = b.dropPiece(92);
 	ASSERT_EQ(p, Invalid);
 }
+
+// Tie in gameState()
+TEST(PiezasTest, gsBaseCheck) {
+	Piezas b;
+
+	// Drop pieces
+	for(int i = 0; i < 2; b.dropPiece(0), i++);
+	for(int i = 0; i < 2; b.dropPiece(1), i++);
+	for(int i = 0; i < 2; b.dropPiece(2), i++);
+	for(int i = 0; i < 2; b.dropPiece(3), i++);
+	for(int i = 0; i < 2; b.dropPiece(4), i++);
+	ASSERT_EQ(b.gameState(), Blank);
+}
