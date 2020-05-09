@@ -24,10 +24,10 @@ Piezas::Piezas() {
 // Resize base of gameboard to have valid row amount
 board.resize(3);
 
-// For every row, resize row to proper size
+// For every row (non-static iteration limit), resize row to proper size
 for(int i = 0; i < board.size(); board[i].resize(4), i++) {
 	
-	// For every row[i] element, reset
+	// For every row[i] element (non-static iteration limit), reset
 	for(int j = 0; j < board[i].size(); j++) {
 		board[i][j] = Blank;
 	}
@@ -41,10 +41,10 @@ turn = X;
 **/
 
 void Piezas::reset() {
-// For every row, resize row to proper size
+// For every row (non-static iteration limit), resize row to proper size
 for(int i = 0; i < board.size(); board[i].resize(4), i++) {
 	
-	// For every row[i] element, reset
+	// For every row[i] element (non-static iteration limit), reset
 	for(int j = 0; j < board[i].size(); j++) {
 		board[i][j] = Blank;
 	}
@@ -70,9 +70,16 @@ Piece Piezas::dropPiece(int column) {
 	}
 
 	// OOB checking on int column
-	if(column >= /* column size/stat int 4 */) {return Invalid;}
+	if(column >= board[0].size()) {return Invalid;}
+
+	// For every row (non-static iteration limit) in board
 	for(int i = 0; i < board.size(); i++) {
 		
+		// Check the position [i][argument]
+		if(board[i][column] == Blank) {
+			board[i][column] = tmpTurn;
+			return tmpTurn;
+		}
 	}
 	return Blank;
 }
