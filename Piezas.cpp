@@ -145,6 +145,7 @@ Piece Piezas::gameState() {
 		}
 	}
 
+	contO, contX = 0;
 	// For every column (non-static iteration limit) in board
 	for(int i = 0; i < (int)board[0].size(); i++) {
 

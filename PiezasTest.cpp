@@ -95,3 +95,26 @@ TEST(PiezasTest, gsBaseCheck) {
 	for(int i = 0; i < 2; i++) {b.dropPiece(4);}
 	ASSERT_EQ(b.gameState(), Blank);
 }
+
+// X wins gameState()
+TEST(PiezasTest, gsXBaseCheck) {
+	Piezas b;
+
+	b.dropPiece(0);
+	b.dropPiece(1);
+	b.dropPiece(0);
+	b.dropPiece(2);
+	b.dropPiece(0);
+	b.dropPiece(3);
+	b.dropPiece(1);
+	b.dropPiece(2);
+	b.dropPiece(3);
+	b.dropPiece(1);
+	b.dropPiece(2);
+	b.dropPiece(3);
+	b.dropPiece(4);
+	b.dropPiece(4);
+	b.dropPiece(4);
+
+	ASSERT_EQ(b.gameState(), X);
+}
