@@ -129,3 +129,39 @@ TEST(PiezasTest, gsXBaseCheck) {
 	p = b.gameState();
 	ASSERT_EQ(p, X);
 }
+
+// Y wins gameState()
+TEST(PiezasTest, gsYBaseCheck) {
+	Piezas b;
+	Piece p;
+
+	
+	
+	b.dropPiece(0);
+	b.dropPiece(1);
+	b.dropPiece(0);
+	b.dropPiece(2);
+	b.dropPiece(1);
+	b.dropPiece(3);
+	b.dropPiece(1);
+	b.dropPiece(2);
+	b.dropPiece(2);
+	b.dropPiece(3);
+	b.dropPiece(3);
+	b.dropPiece(2);
+	b.dropPiece(0);
+	b.dropPiece(3);
+	b.dropPiece(0);
+	
+	p = b.gameState();
+	ASSERT_EQ(p, Y);
+}
+
+// Invalid gameState()
+TEST(PiezasTest, gsInvBaseCheck) {
+	Piezas b;
+	Piece p;
+	b.dropPiece(0);
+	p = b.gameState();
+	ASSERT_EQ(p, Invalid);
+}
