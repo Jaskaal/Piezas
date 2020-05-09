@@ -21,7 +21,9 @@ TEST(PiezasTest, sanityCheck) {
 TEST(PiezasTest, constCheck) {
 	Piezas b;
 	for(int i = 0; i < 3; i++) {
-		for(int j = 0; j < 4; ASSERT_EQ(b.pieceAt(i,j), Blank), j++);
+		for(int j = 0; j < 4; j++) {
+			ASSERT_EQ(b.pieceAt(i,j), Blank);
+		}
 	}
 }
 
@@ -39,7 +41,9 @@ TEST(PiezasTest, rstBaseCheck) {
 	// Reset and check
 	b.reset();
 	for(int i = 0; i < 3; i++) {
-		for(int j = 0; j < 4; ASSERT_EQ(b.pieceAt(i,j), Blank), j++);
+		for(int j = 0; j < 4; j++) {
+			ASSERT_EQ(b.pieceAt(i,j), Blank);
+		}
 	}
 }
 
