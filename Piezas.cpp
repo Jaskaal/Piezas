@@ -134,14 +134,32 @@ Piece Piezas::gameState() {
 	}
 
 	// For every column (non-static iteration limit) in board
-	for(int i = 0; i < (int)board.size()[0]; i++) {
+	for(int i = 0; i < (int)board[0].size(); i++) {
 
 		// For every [j][i] element (non-static iteration limit)
 		for(int j = 0; j < (int)board.size(); j++) {
-			//
+			
+			// Blank tile (Fatal on non-valid position?)
+			if(board[j][i] == Blank || (board[j][i] != X && board[j][i] != O)) {
+				return Invalid;
+			} 
+
+			// X
+			else if(board[j][i] == X) {
+				contO = 0;
+				XMax = std::max(XMax, ++contX);
+			} 
+
+			// O
+			else if(board[j][i] == X) {
+				contX = 0;
+				OMax = std::max(OMax, ++contO);
+			}
 		}
 	}
 
-	// Check X
-	return Blank;
+	// Is X == O? ->
+	// Is X > O ? ->
+	// Return conditionally
+	return (XMax == OMax ? Blank:(XMax > OMax ? X:O));
 }
