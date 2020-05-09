@@ -127,20 +127,20 @@ Piece Piezas::gameState() {
 		// For every [i][j] element (non-static iteration limit)
 		for(int j = 0; j < (int)board[i].size(); j++) {
 			// Blank tile (Fatal on non-valid position?)
-			if(board[i][j] == Blank || (board[i][j] != X && board[i][j] != O)) {
+			if(board[i][j] == Blank) {
 				return Invalid;
 			} 
 
 			// X
 			else if(board[i][j] == X) {
-				contO = 0;
-				XMax = std::max(XMax, ++contX);
+				contO = 0, contX += 1;
+				XMax = std::max(XMax, contX);
 			} 
 
 			// O
 			else if(board[i][j] == O) {
-				contX = 0;
-				OMax = std::max(OMax, ++contO);
+				contX = 0, contO += 1;
+				OMax = std::max(OMax, contO);
 			}
 		}
 	}
@@ -158,14 +158,14 @@ Piece Piezas::gameState() {
 
 			// X
 			else if(board[j][i] == X) {
-				contO = 0;
-				XMax = std::max(XMax, ++contX);
+				contO = 0, contX += 1;
+				XMax = std::max(XMax, contX);
 			} 
 
 			// O
 			else if(board[j][i] == O) {
-				contX = 0;
-				OMax = std::max(OMax, ++contO);
+				contX = 0, contO += 1;
+				OMax = std::max(OMax, contO);
 			}
 		}
 	}
