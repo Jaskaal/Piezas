@@ -149,7 +149,7 @@ Piece Piezas::gameState() {
 		for(int j = 0; j < (int)board.size(); j++) {
 			
 			// X
-			else if(board[j][i] == X) {
+			if(board[j][i] == X) {
 				contO = 0, contX += 1;
 				XMax = std::max(XMax, contX);
 			} 
