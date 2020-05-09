@@ -25,10 +25,10 @@ Piezas::Piezas() {
 	board.resize(3);
 
 	// For every row (non-static iteration limit), resize (Static) row to proper size
-	for(int i = 0; i < board.size(); board[i].resize(4), i++) {
+	for(int i = 0; i < (int)board.size(); board[i].resize(4), i++) {
 		
 		// For every [i][j] element (non-static iteration limit), reset
-		for(int j = 0; j < board[i].size(); j++) {
+		for(int j = 0; j < (int)board[i].size(); j++) {
 			board[i][j] = Blank;
 		}
 	}
@@ -41,10 +41,10 @@ Piezas::Piezas() {
 **/
 void Piezas::reset() {
 	// For every row (non-static iteration limit), resize row to proper size
-	for(int i = 0; i < board.size(); board[i].resize(4), i++) {
+	for(int i = 0; i < (int)board.size(); board[i].resize(4), i++) {
 		
 		// For every [i][j] element (non-static iteration limit), reset
-		for(int j = 0; j < board[i].size(); j++) {
+		for(int j = 0; j < (int)board[i].size(); j++) {
 			board[i][j] = Blank;
 		}
 	}
@@ -73,7 +73,7 @@ Piece Piezas::dropPiece(int column) {
 	if(column >= board[0].size()) {return Invalid;}
 
 	// For every row (non-static iteration limit) in board
-	for(int i = 0; i < board.size(); i++) {
+	for(int i = 0; i < (int)board.size(); i++) {
 		
 		// Check the position [i][argument]
 		if(board[i][column] == Blank) {
@@ -110,10 +110,10 @@ Piece Piezas::gameState() {
 	int contO, contX = 0;
 
 	// For every row (non-static iteration limit) in board
-	for(int i = 0; i < board.size(); i++) {
+	for(int i = 0; i < (int)board.size(); i++) {
 		
 		// For every [i][j] element (non-static iteration limit)
-		for(int j = 0; j < board[i].size(); j++) {
+		for(int j = 0; j < (int)board[i].size(); j++) {
 			// Blank tile (Fatal on non-valid position?)
 			if(board[i][j] == Blank || (board[i][j] != X && board[i][j] != O)) {
 				return Invalid;
@@ -134,10 +134,10 @@ Piece Piezas::gameState() {
 	}
 
 	// For every column (non-static iteration limit) in board
-	for(int i = 0; i < board.size()[0]; i++) {
+	for(int i = 0; i < (int)board.size()[0]; i++) {
 
 		// For every [j][i] element (non-static iteration limit)
-		for(int j = 0; j < board.size(); j++) {
+		for(int j = 0; j < (int)board.size(); j++) {
 			//
 		}
 	}
