@@ -70,7 +70,7 @@ Piece Piezas::dropPiece(int column) {
 	}
 
 	// OOB checking on int column
-	if(column >= board[0].size()) {return Invalid;}
+	if(column >= (int)board[0].size()) {return Invalid;}
 
 	// For every row (non-static iteration limit) in board
 	for(int i = 0; i < (int)board.size(); i++) {
@@ -102,7 +102,7 @@ Piece Piezas::pieceAt(int row, int column) {
 	if(board[row][column] != X && board[row][column] != O && board[row][column] != Blank) {
 		return Invalid;
 	}
-	
+
 	return board[row][column];
 }
 
