@@ -36,7 +36,6 @@ TEST(PiezasTest, rstBaseCheck) {
 	for(int i = 0; i < 2; b.dropPiece(1), i++);
 	for(int i = 0; i < 2; b.dropPiece(2), i++);
 	for(int i = 0; i < 2; b.dropPiece(3), i++);
-	for(int i = 0; i < 2; b.dropPiece(4), i++);
 
 	// Reset and check
 	b.reset();
@@ -184,6 +183,13 @@ TEST(PiezasTest, paBaseInv) {
 	Piezas b;
 	b.dropPiece(0);
 	Piece p = b.pieceAt(44,11);
+	ASSERT_EQ(p, Invalid);
+}
+
+TEST(PiezasTest, paBaseInvAlt) {
+	Piezas b;
+	b.dropPiece(0);
+	Piece p = b.pieceAt(2,11);
 	ASSERT_EQ(p, Invalid);
 }
 
