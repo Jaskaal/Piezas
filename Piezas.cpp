@@ -99,11 +99,7 @@ Piece Piezas::pieceAt(int row, int column) {
 	else if(column >= (int)board[0].size() || column < 0) {
 		return Invalid;
 	}
-
-	/*if(board[row][column] != X && board[row][column] != O && board[row][column] != Blank) {
-		return Invalid;
-	}*/
-
+	
 	return board[row][column];
 }
 
@@ -145,7 +141,7 @@ Piece Piezas::gameState() {
 		}
 	}
 
-	contO, contX = 0;
+	contO = 0, contX = 0;
 	// For every column (non-static iteration limit) in board
 	for(int i = 0; i < (int)board[0].size(); i++) {
 

@@ -135,8 +135,6 @@ TEST(PiezasTest, gsOBaseCheck) {
 	Piezas b;
 	Piece p;
 
-	
-	
 	b.dropPiece(0);
 	b.dropPiece(1);
 	b.dropPiece(0);
@@ -163,5 +161,35 @@ TEST(PiezasTest, gsInvBaseCheck) {
 	Piece p;
 	b.dropPiece(0);
 	p = b.gameState();
+	ASSERT_EQ(p, Invalid);
+}
+
+TEST(PiezasTest, paBaseX) {
+	Piezas b;
+	b.dropPiece(0);
+	Piece p = b.pieceAt(0,0);
+	ASSERT_EQ(p, X);
+}
+
+TEST(PiezasTest, paBaseO) {
+	Piezas b;
+	b.dropPiece(0);
+	b.reset();
+	b.dropPiece(0);
+	Piece p = b.pieceAt(0,0);
+	ASSERT_EQ(p, O);
+}
+
+TEST(PiezasTest, paBaseInv) {
+	Piezas b;
+	b.dropPiece(0);
+	Piece p = b.pieceAt(44,11);
+	ASSERT_EQ(p, Invalid);
+}
+
+TEST(PiezasTest, paBaseInvNegative) {
+	Piezas b;
+	b.dropPiece(0);
+	Piece p = b.pieceAt(-44,-11);
 	ASSERT_EQ(p, Invalid);
 }
